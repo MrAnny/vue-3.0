@@ -4,23 +4,21 @@
       <div style="height: 100%">
         <div class="userlogo">
           <img src="../assets/userlogo.jpg" alt="">
-          <header class="header">欢迎登录</header>
+          <header class="header">登录</header>
         </div>
         <div class="content">
           <van-form @submit="onSubmit">
             <van-field
               v-model="username"
               left-icon="user-circle-o"
-              clearable
-              icon="question-o"
-              :error="false"
+              right-icon="warning-o"
               :rules="[{ required: true, message: '请填写用户名' }]"
             />
             <van-field
               v-model="password"
               type="password"
               left-icon="passed"
-              clearable
+              right-icon="warning-o"
               :rules="[{ required: true, message: '请填写密码' }]"
             />
             <div style="margin: 16px;">
@@ -56,10 +54,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .container {
-    overflow-x: scroll;
-    overflow-y: scroll;
-  }
   .container .userlogo {
     margin-top: 80px;
     text-align: center;
